@@ -1,97 +1,278 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Bucket List</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
         h1 {
             text-align: center;
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
+            color: #333;
+            margin-bottom: 20px;
         }
+
+        p {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
         ul {
             list-style: none;
-            margin: 0;
             padding: 0;
-            text-align: center;
+            margin: 0;
         }
+
         li {
-            padding: 5px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            margin: 4px 0;
-            border-radius: 3px; /* Adjust the border radius for smaller corners */
-            display: flex;
-            align-items: center;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
-        li input[type="checkbox"] {
-            margin-right: 10px;
-            width: 20px;
-            height: 20px;
+
+        li:hover {
+            transform: translateY(-3px);
         }
-        .deprecated {
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        label {
+            display: block;
+            padding: 15px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+
+        label:hover {
+            background-color: #e0e0e0;
+        }
+
+        .checked {
             text-decoration: line-through;
+            color: #999;
         }
     </style>
 </head>
 <body>
-    <h1>Bucket List</h1>
-    <p>This is my thrilling bucket list, a daring catalog of adventures and conquests I aim to conquer in my lifetime.</p>
-    <ul>
-        <li><input type="checkbox" id="item2">Scuba-diving in andaman</li>
-        <li><input type="checkbox" id="item2">Sky-diving</li>
-        <li><input type="checkbox" id="item2" checked disabled><span class="deprecated">para-gliding</span></li>
-        <li><input type="checkbox" id="item2">Bugee Jumping</li>
-        <li><input type="checkbox" id="item2">bike ride in ladakh</li>
-        <li><input type="checkbox" id="item2" checked disabled><span class="deprecated">new year celebration mall road manali</span></li>
-        <li><input type="checkbox" id="item2">Trek to Kheerganga and Parvati valley in kasol</li>
-        <li><input type="checkbox" id="item2">Do 4 dham Yatra [3 Done]</li>
-        <li><input type="checkbox" id="item2">12 Jyotirlingas [8 Done]</li>
-        <li><input type="checkbox" id="item2">Ziro Music Fest (Arunachal Pradesh)</li>
-        <li><input type="checkbox" id="item2">Trip to kerela</li>
-        <li><input type="checkbox" id="item2">Sikkim in winter</li>
-        <li><input type="checkbox" id="item2"checked disabled><span class="deprecated">visiting 7 sister of india</span></li>
-        <li><input type="checkbox" id="item2">Kalpa in Kinnaur Himachal Pradesh</li>
-        <li><input type="checkbox" id="item2">Train travel in snow in shimla (Banihal - quzhigund)</li>
-        <li><input type="checkbox" id="item2">Dayara Bugyal Trek and kuari pass trek in Uttarakhand in winter</li>
-        <li><input type="checkbox" id="item2">Pithrody-Udyavara Beach in karnataka</li>
-        <li><input type="checkbox" id="item2">Witness snowfall</li>
-        <li><input type="checkbox" id="item2">Sleep in an Igloo</li>
-        <li><input type="checkbox" id="item2"checked disabled><span class="deprecated">Lonavla trip in Monsoon</span></li>
-        <li><input type="checkbox" id="item2"checked disabled><span class="deprecated">Korigad fort climbing in Monsoon</span></li>
-        <li><input type="checkbox" id="item2"checked disabled><span class="deprecated">waterfall in cherrapunji</span></li>
-        <li><input type="checkbox" id="item2"checked disabled><span class="deprecated">Lion Sighting in forest</span></li>
-        <li><input type="checkbox" id="item2">Solve Rubik's cube</li>
-        <li><input type="checkbox" id="item2">Climb to Everest base camp</li>
-        <li><input type="checkbox" id="item2">Drive across India</li>
-        <li><input type="checkbox" id="item2">Party in Goa</li>
-        <li><input type="checkbox" id="item2"checked disabled><span class="deprecated">visit mysore during dussehra</span></li>
-        <li><input type="checkbox" id="item2"checked disabled><span class="deprecated">Zip line from highest peak in Nepal</span></li>
-        <li><input type="checkbox" id="item2">Fall in love</li>
-        <li><input type="checkbox" id="item2">Naruto village in japan</li>
-        <li><input type="checkbox" id="item2">Eat sushi in Tokyo</li>
-        <li><input type="checkbox" id="item2">go to Germany or any other country atleast for 1 year</li>
-        <li><input type="checkbox" id="item2">Take my parents on a overseas trip</li>
-        <li><input type="checkbox" id="item2">Visit Antarctica</li>
-        <li><input type="checkbox" id="item2">kazakhstan for atleast 15 days</li>
-        <li><input type="checkbox" id="item2">visit Thailand</li>
-        <li><input type="checkbox" id="item2">switzerland in winter and summer</li>
-        <li><input type="checkbox" id="item2">god of hand in vietnam</li>
-        <li><input type="checkbox" id="item2">Las vegas in USA</li>
-        <li><input type="checkbox" id="item2">Siberian city of Yakutsk</li>
-        <li><input type="checkbox" id="item2">Walk on a frozen lake</li>
-        <li><input type="checkbox" id="item2">Drive a lamborghini</li>
-        <li><input type="checkbox" id="item2">Party in Amsterdam</li>
-        <li><input type="checkbox" id="item2"> Read 100 books</li>
-        <li><input type="checkbox" id="item2">Be on a ship in an ocean</li>
-        <li><input type="checkbox" id="item2">Set foot on all 7 continents</li>
-        <li><input type="checkbox" id="item2">Party in Amsterdam</li>
-    </ul>
+    <div class="container">
+        <h1>Bucket List</h1>
+        <p>This is my thrilling bucket list, a daring catalog of adventures and conquests I aim to conquer in my lifetime.</p>
+        <ul>
+            <li>
+                <input type="checkbox" id="item1" checked disabled>
+                <label for="item1" class="checked">Scuba-diving in Andaman</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item2">
+                <label for="item2">Sky-diving</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item3" checked disabled>
+                <label for="item3" class="checked">Para-gliding</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item4">
+                <label for="item4">Bungee Jumping</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item5">
+                <label for="item5" >Bike ride in Ladakh</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item6" checked disabled>
+                <label for="item6" class="checked">New Year celebration Mall Road Manali</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item7" checked disabled>
+                <label for="item7" class="checked">Trek to Kheerganga and Parvati valley in Kasol</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item8">
+                <label for="item8" class="checked">Do 4 dham Yatra</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item3">
+                <label for="item3">12 Jyotirlingas [8 Done]</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item4">
+                <label for="item4">Ziro Music Fest (Arunachal Pradesh)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item5">
+                <label for="item5">Trip to Kerala</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item6">
+                <label for="item6">Sikkim in winter</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item7" checked disabled>
+                <label for="item7" class="checked">Visiting 7 Sister of India</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item8">
+                <label for="item8">Kalpa in Kinnaur Himachal Pradesh</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item9">
+                <label for="item9">Train travel in snow in Shimla (Banihal - Quzhigund)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item10">
+                <label for="item10">Dayara Bugyal Trek, Kuari Pass Trek, Sar Pass Trek in Uttarakhand in winter</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item11">
+                <label for="item11">Pithrody-Udyavara Beach in Karnataka</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item12">
+                <label for="item12">Witness snowfall</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item13">
+                <label for="item13">Sleep in an Igloo</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item14" checked disabled>
+                <label for="item14" class="checked">Lonavla trip in Monsoon</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item15" checked disabled>
+                <label for="item15" class="checked">Korigad fort climbing in Monsoon</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item16" checked disabled>
+                <label for="item16" class="checked">Waterfall in Cherrapunji</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item17" checked disabled>
+                <label for="item17" class="checked">Lion Sighting in Forest</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item18">
+                <label for="item18">Solve Rubik's Cube</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item19">
+                <label for="item19">Climb to Everest Base Camp</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item20">
+                <label for="item20">Drive across India</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item21">
+                <label for="item21">Party in Goa</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item22" checked disabled>
+                <label for="item22" class="checked">Visit Mysore during Dussehra</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item23" checked disabled>
+                <label for="item23" class="checked">Zip line from highest peak in Nepal</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item24">
+                <label for="item24">Fall in Love</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item25">
+                <label for="item25">Naruto Village in Japan</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item26">
+                <label for="item26">Eat Sushi in Tokyo</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item27">
+                <label for="item27">Go to Germany or any other country at least for 1 year</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item28">
+                <label for="item28">Take my parents on an overseas trip</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item29">
+                <label for="item29">Visit Antarctica</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item30">
+                <label for="item30">Kazakhstan for at least 15 days</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item31">
+                <label for="item31">Visit Thailand</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item32">
+                <label for="item32">Switzerland in winter and summer</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item33">
+                <label for="item33">God of Hand in Vietnam</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item34">
+                <label for="item34">Las Vegas in USA</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item35">
+                <label for="item35">Siberian City of Yakutsk</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item36">
+                <label for="item36">Walk on a Frozen Lake</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item37">
+                <label for="item37">Drive a Lamborghini</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item38">
+                <label for="item38">Party in Amsterdam</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item39">
+                <label for="item39">Read 100 Books</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item40">
+                <label for="item40">Be on a Ship in an Ocean</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item41">
+                <label for="item41">Set Foot on All 7 Continents</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item42">
+                <label for="item42">Party in Amsterdam</label>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>
